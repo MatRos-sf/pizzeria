@@ -10,8 +10,7 @@ class SetLastUserLoggin(object):
     def __call__(self, request):
         if request.user.is_authenticated:
             user = User.objects.get(id=request.user.id)
-
-        user.last_loggin = now()
-        user.save()
+            user.last_loggin = now()
+            user.save()
         response = self.get_response(request)
         return response
