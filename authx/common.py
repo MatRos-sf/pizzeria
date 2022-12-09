@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _     #możliwe że już go nie ma
+from django.utils.translation import gettext_lazy as _     #możliwe że już go nie ma
 
 ROLES = (
     (1, _('Cashier')),

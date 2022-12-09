@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'authx',
+
 ]
 
 MIDDLEWARE = [
@@ -52,10 +54,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'authx.middleware.SetLastUserLoggin', #nasz nowy middleware
 ]
 
 ROOT_URLCONF = 'djangopizzeria.urls'
-
+AUTH_USER_MODEL = 'authx.CustomUser' #zastępujemy domyślną klasę użytkownika
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
